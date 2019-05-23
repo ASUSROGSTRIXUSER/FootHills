@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.jqueryui.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" style="">
+  <link rel="stylesheet" href="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/theme.css">
+  
+  <link rel="icon" href="Images/Untitled-1.png">
+  <title>Admin Reports</title>
+  
+</head>
+
+<body style="	background-image: url(C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/Backgroundphoto.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14" style="">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="HomeAdmin.html">Home</a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center">Reports </h3>
+        </div>
+      </div>
+   
+
+  <div class="pi-wrapper pi-draggable">
+    <ul class="nav nav-pills">
+      <li class="nav-item" style=""> <a href="" class="active nav-link" data-toggle="pill" data-target="#tabone">Project Reports</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#tabtwo">Material Reports</a> </li>
+     
+     
+    </ul>
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="tabone" role="tabpanel" style="">
+        
+        <div class="table-responsive pi-draggable">
+          <table class="table table-bordered table-hover table-light">
+            <thead class="thead-dark">
+              <tr>
+                <th class="text-center">Code</th>
+                <th class="text-center">Project Name</th>
+                <th class="w-25 text-center">Selection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-center">1</th>
+                <td class="text-center">Samantha Japan</td>
+                <td class="text-center"><a class=" btn btn-primary" href="#ProjectReportsModal" data-toggle="modal">View Block Details</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+
+	   <div class="pi-wrapper pi-draggable">
+    <ul class="nav nav-pills">
+      <li class="nav-item" style=""> <a href="" class="active nav-link" data-toggle="pill" data-target="#secondtabone">Stock-in Reports</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#secondtabtwo">Stock-out Reports</a> </li>  
+    </ul>
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="secondtabone" role="tabpanel" style="">
+        
+        <div class="table-responsive pi-draggable">
+          <table class="table table-bordered table-hover table-light" id="Stockinreportstable">
+            <thead class="thead-dark">
+              <tr>
+                <th class="text-center">Date</th>
+                <th class="text-center">Time</th>
+				  <th class="w-25 text-center">User Name</th>
+				  <th class="w-25 text-center">Position</th>
+                <th class="w-25 text-center">Material</th>
+				<th class="w-25 text-center">Stock-In Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-center">5/18/2019</th>
+                <td class="text-center">10:59AM</td>
+				<td class="text-center">Jeric Carl Lacag</td>
+				<td class="text-center">User</td>
+				<td class="text-center">Flourescent 20W</td>
+				<td class="text-center">15</td>             
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="secondtabtwo" role="tabpanel">
+       
+        <div class="table-responsive pi-draggable" draggable="true">
+          <table class="table table-bordered table-hover table-light">
+            <thead class="thead-dark">
+              <tr>
+			    <th class="text-center">No.</th>
+                <th class="text-center">User Name</th>
+                <th class="text-center">Number of Confirmed by Admin Request</th>
+                <th class="text-center">Selection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-center">1</th>
+                <td class="text-center">Mark A. Garado</td>
+                <td class="text-center">6</td>
+				<td class="text-center"><a class=" btn btn-primary" href="#StockoutModal" data-toggle="modal">View Confirmed Request</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>  
+      </div>
+     
+    </div>
+  </div>
+    </div>
+  <div class="modal pi-draggable fade" id="ProjectReportsModal">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center">Samantha Japan Block Detail</h5>
+          <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body" id="PrintableData">
+          <div class="table-responsive pi-draggable">
+            <table class="table table-bordered " id="TableProjects">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-center">Block</th>
+                  <th class="text-center">Lot</th>
+                  <th class="text-center">Title No.</th>
+                  <th class="text-center">Area(Sqm)</th>
+                  <th class="w-50 text-center">Borrower</th>
+                  <th class="text-center">Package Price</th>
+                  <th class="text-center">Type</th>
+                  <th class="text-center">Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th style="" class="text-center">1</th>
+                  <td class="text-center">2</td>
+                  <td class="text-center">122MM_BL9</td>
+                  <td class="text-center">245</td>
+                  <td class="text-center">Mark Andrew Merasalis Bernardez</td>
+                  <td class="text-center">6,000,000</td>
+                  <td>Economic</td>
+                  <td>Occupied</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal pi-draggable fade" id="StockoutModal" >
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center">Stock-out Detail</h5>
+          <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body" id="PrintableData">
+          <div class="table-responsive " draggable="true">
+            <table class="table table-bordered " id="UserStockoutDetails">
+              <thead class="thead-dark">
+                <tr>
+				<th class="">Date Requested</th>
+                  <th class="">Date Confirmed</th>
+				  <th class="">Project Name</th>
+                  <th>Block</th>
+                  <th>Lot</th>             
+                  <th class=" text-center">Selection</th>               
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th style="" class="text-center">5/15/2019</th>
+                  <td class="text-center">5/16/2019</td>
+                  <td class="text-center">Samantha Japan</td>
+                  <td class="text-center">1</td>
+                  <td class="text-center">2</td>
+                  <td class="text-center"><a class="btn btn-primary">View</a></td>
+               
+                </tr>
+              </tbody>
+            </table>
+          </div>
+		   <div class="table-responsive " >
+            <table class="table table-bordered " id="UserstockoutMaterials">
+              <thead class="thead-dark">
+                <tr>
+				<th class="">No.</th>
+                  <th class="">Material Name</th>
+				  <th class="">Unit</th>
+                  <th>Quantity</th>
+                         
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+               
+                  <td class="text-center">1</td>
+                  <td class="text-center">Barbed Wire</td>
+                  <td class="text-center">mm</td>
+                  <td class="text-center">2</td>
+            
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" style=""></script>
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" style=""></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js" style=""></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js" style=""></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js" style=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" style=""></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js" style=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" style=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" style=""></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.colVis.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.jqueryui.min.js"></script>
+  
+  <script style="">
+    $('#TableProjects').DataTable({
+      dom: 'Bfrtip',
+     
+ buttons: ['colvis', {extend:'print',
+         message:'Project List',
+		 exportOptions:{
+		 modifier:{
+		 page:'current'
+		 }
+		 }
+		 ,}
+		 ,{
+        extend: 'excel',
+        message: 'Project List',
+      }, {
+        extend: 'pdf',
+        message: 'Project List',
+        exportOptions: {
+          modifier: {
+            page: 'current'
+          }
+        }
+      }]	
+    });
+	
+	 $('#Stockinreportstable').DataTable({
+      dom: 'Bfrtip',
+     
+ buttons: ['colvis', {extend:'print',
+         message:'Project List',
+		 exportOptions:{
+		 modifier:{
+		 page:'current'
+		 }
+		 }
+		 ,}
+		 ,{
+        extend: 'excel',
+        message: 'Stock-in List Report',
+      }, {
+        extend: 'pdf',
+        message: 'Stock-in List Report',
+        exportOptions: {
+          modifier: {
+            page: 'current'
+          }
+        }
+      }]	
+    });
+	
+	 $('#UserStockoutDetails').DataTable({
+      dom: 'Bfrtip',
+     
+ buttons: ['colvis', {extend:'print',
+         message:'Project List',
+		 exportOptions:{
+		 modifier:{
+		 page:'current'
+		 }
+		 }
+		 ,}
+		 ,{
+        extend: 'excel',
+        message: 'Stock-in List Report',
+      }, {
+        extend: 'pdf',
+        message: 'Stock-in List Report',
+        exportOptions: {
+          modifier: {
+            page: 'current'
+          }
+        }
+      }]	
+    });
+	 $('#UserstockoutMaterials').DataTable({
+      dom: 'Bfrtip',
+     
+ buttons: ['colvis', {extend:'print',
+         message:'Project List',
+		 exportOptions:{
+		 modifier:{
+		 page:'current'
+		 }
+		 }
+		 ,}
+		 ,{
+        extend: 'excel',
+        message: 'Stock-in List Report',
+      }, {
+        extend: 'pdf',
+        message: 'Stock-in List Report',
+        exportOptions: {
+          modifier: {
+            page: 'current'
+          }
+        }
+      }]	
+    });
+	
+	
+  </script>
+</body>
+
+</html>

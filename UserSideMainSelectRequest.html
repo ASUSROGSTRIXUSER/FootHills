@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/theme.css">
+  <link rel="icon" href="Images/Untitled-1.png">
+</head>
+
+<body style="	background-image: url(Images/Backgroundphoto.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14" style="">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="HomeUser.html">Home</a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container" >
+  <h2 class="pi-draggable text-center">Select Project</h2>
+  <div class="row pi-draggable" draggable="true">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover table-light" id="ProjectSelectTable">
+          <thead class="thead-dark">
+            <tr>
+              <th class="text-center">Code</th>
+              <th class="text-center">Project Name</th>
+              <th class="text-center w-25">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="text-center">1</th>
+              <td class="text-center">Samantha Japan</td>
+              <td class="text-center"><a class="btn btn-primary btn-block" href="#UserSideProjectTable" data-toggle="modal">Select</a></td>
+            </tr>
+            <tr>
+              <th class="text-center">2</th>
+              <td class="text-center">Samantha Korea</td>
+              <td class="text-center"><a class="btn btn-primary btn-block" href="#UserSideProjectTable" data-toggle="modal">Select</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="modal" id="UserSideProjectTable">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Project Details</h5> <button type="button" class="close" data-dismiss="modal"> <span class="">×</span> </button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive pi-draggable" draggable="true">
+            <table class="table table-bordered table-hover table-light" id="ProjectDetails">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-center">Block</th>
+                  <th class="text-center">Lot</th>
+                  <th class="text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="text-center">1</th>
+                  <td class="text-center">1</td>
+                  <td><a class="btn btn-primary btn-block" href="UserSideRequest.html">Select</a></td>
+                </tr>
+                <tr>
+                  <th class="text-center">1</th>
+                  <td class="text-center">2</td>
+                  <td><a class="btn btn-primary btn-block" href="UserSideRequest.html">Select</a></td>
+                </tr>
+              </tbody>
+            </table>x`
+          </div>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script style="">
+    $(document).ready(function() {
+      $('#ProjectDetails').DataTable();
+      $('#ProjectSelectTable').DataTable();
+    });
+  </script>
+</body>
+
+</html>

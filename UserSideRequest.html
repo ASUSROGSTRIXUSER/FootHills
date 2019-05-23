@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/theme.css">
+  <link rel="icon" href="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/Untitled-1.png">
+  <title></title>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function($)
+{
+	//diri ka magsulod ug data gikan sa database
+	var ajax_data =
+	[
+		{Units:"Code", MaterialName:"Flourescent", Quantity:"40"}, 
+		
+		
+	]
+
+
+
+	var random_id = function  () 
+	{
+		var id_num = Math.random().toString(9).substr(2,3);
+		var id_str = Math.random().toString(36).substr(2);
+		
+		return id_num + id_str;
+	}
+
+
+	
+	var tbl = '';
+	tbl +='<table class="table table-hover table-light">'
+
+		//--->create table header > start
+		tbl +='<thead>';
+			tbl +='<tr>';
+		     tbl +='<th>No.</th>';
+			tbl +='<th>Units</th>';
+			tbl +='<th>Material Name</th>';
+			tbl +='<th>Quantity</th>';
+			tbl +='<th>Options</th>';
+			tbl +='</tr>';
+		tbl +='</thead>';
+		tbl +='<tbody>';
+
+
+			$.each(ajax_data, function(index, val) 
+			{
+				//diri ka magilis mabutang tong id na auto increment
+				var row_id = random_id();
+
+				//pagshow sa data
+				tbl +='<tr row_id="'+row_id+'">';
+					 tbl +='<td >1</td>';
+				    tbl +='<td ><div class="row_data" edit_type="click" col_name="Units">'+val['Units']+'</div></td>';
+					tbl +='<td ><div class="row_data" edit_type="click" col_name="lnameMaterialName">'+val['MaterialName']+'</div></td>';
+					tbl +='<td ><div class="row_data" edit_type="click" col_name="Quantity">'+val['Quantity']+'</div></td>';
+				
+					tbl +='<td>';
+					 
+						tbl +='<span class="btn_edit" > <a href="#" class="btn btn-link " row_id="'+row_id+'" > Edit</a> </span>';
+
+				
+						tbl +='<span class="btn_save"> <a href="#" class="btn btn-link"  row_id="'+row_id+'"> Save</a> | </span>';
+						tbl +='<span class="btn_cancel"> <a href="#" class="btn btn-link" row_id="'+row_id+'"> Cancel</a> | </span>';
+
+					tbl +='</td>';
+					
+					
+				tbl +='</tr>';
+			});
+
+			
+
+		tbl +='</tbody>';
+		
+
+	tbl +='</table>'	
+
+
+	//out put table data
+	$(document).find('.tbl_user_data').html(tbl);
+
+	$(document).find('.btn_save').hide();
+	$(document).find('.btn_cancel').hide(); 
+
+
+	
+	$(document).on('click', '.row_data', function(event) 
+	{
+		event.preventDefault(); 
+
+		if($(this).attr('edit_type') == 'button')
+		{
+			return false; 
+		}
+
+		
+		$(this).closest('div').attr('contenteditable', 'true');
+	
+		$(this).addClass('bg-warning').css('padding','5px');
+
+		$(this).focus();
+	})	
+	
+
+
+	//function na tig save sa data
+	$(document).on('focusout', '.row_data', function(event) 
+	{
+		event.preventDefault();
+
+		if($(this).attr('edit_type') == 'button')
+		{
+			return false; 
+		}
+
+		var row_id = $(this).closest('tr').attr('row_id'); 
+		
+		var row_div = $(this)				
+		.removeClass('bg-warning') //add bg css
+		.css('padding','')
+
+		var col_name = row_div.attr('col_name'); 
+		var col_val = row_div.html(); 
+
+		var arr = {};
+		arr[col_name] = col_val;
+
+		//use the "arr"	object for your ajax call
+		$.extend(arr, {row_id:row_id});
+
+		//out put to show
+		$('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>');
+		
+	})	
+
+
+ 
+	//function sa edit
+	$(document).on('click', '.btn_edit', function(event) 
+	{
+		event.preventDefault();
+		var tbl_row = $(this).closest('tr');
+
+		var row_id = tbl_row.attr('row_id');
+
+		tbl_row.find('.btn_save').show();
+		tbl_row.find('.btn_cancel').show();
+
+		//hide edit button
+		tbl_row.find('.btn_edit').hide(); 
+
+		//make the whole row editable
+		tbl_row.find('.row_data')
+		.attr('contenteditable', 'true')
+		.attr('edit_type', 'button')
+		.addClass('bg-warning')
+		.css('padding','3px')
+
+		
+		tbl_row.find('.row_data').each(function(index, val) 
+		{  
+			
+			$(this).attr('original_entry', $(this).html());
+		}); 		
+		
+
+	});
+	
+
+
+	//function sa cancel	
+	$(document).on('click', '.btn_cancel', function(event) 
+	{
+		event.preventDefault();
+
+		var tbl_row = $(this).closest('tr');
+
+		var row_id = tbl_row.attr('row_id');
+
+		
+		tbl_row.find('.btn_save').hide();
+		tbl_row.find('.btn_cancel').hide();
+
+	
+		tbl_row.find('.btn_edit').show();
+
+	
+		tbl_row.find('.row_data')
+		.attr('edit_type', 'click')
+		.removeClass('bg-warning')
+		.css('padding','') 
+
+		tbl_row.find('.row_data').each(function(index, val) 
+		{   
+			$(this).html( $(this).attr('original_entry') ); 
+		});  
+	});
+
+
+	
+	//function sa all entry save
+	$(document).on('click', '.btn_save', function(event) 
+	{
+		event.preventDefault();
+		var tbl_row = $(this).closest('tr');
+
+		var row_id = tbl_row.attr('row_id');
+
+		
+	
+		tbl_row.find('.btn_save').hide();
+		tbl_row.find('.btn_cancel').hide();
+
+	
+		tbl_row.find('.btn_edit').show();
+
+
+		
+		tbl_row.find('.row_data')
+		.attr('edit_type', 'click')
+		.removeClass('bg-warning')
+		.css('padding','') 
+
+		
+		var arr = {}; 
+		tbl_row.find('.row_data').each(function(index, val) 
+		{   
+			var col_name = $(this).attr('col_name');  
+			var col_val  =  $(this).html();
+			arr[col_name] = col_val;
+		});
+		
+
+		
+		$.extend(arr, {row_id:row_id});
+
+		//out put to show
+		$('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>')
+		 
+
+	});
+
+
+
+}); 
+</script>
+</head>
+
+<body style="	background-image: url(C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/Backgroundphoto.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" style="">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="HomeAdmin.html">Home</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="UserSideMainSelectRequest.html">Back to Project Selection</a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center"> Request For Materials Form</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5 border-dark" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <form id="c_form-h" class="">
+            <div class="form-group row"> <label for="inputDate" class="col-2 col-form-label">Date</label>
+              <div class="col-10">
+                <input id="todayDate" type="date" class="form-control w-50 text-center" readonly=""> </div>
+            </div>
+            <div class="form-group row"> <label class="col-2 col-form-label" for="">Materials</label>
+              <div class="col-10"><a class="btn btn-primary" href="#modalMaterial" data-toggle="modal">Select Materials</a>
+                <div>
+                  <input type="text" class="w-50" placeholder="Selected Material" readonly="">
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="form-group row"> <label class="col-2 col-form-label" for="">Units</label>
+            <div class="col-10">
+              <select required="required" class="w-25">
+                <option value="cm">cm</option>
+                <option value="m">m</option>
+                <option value="mm">mm</option>
+                <option value="inch">inch</option>
+                <option value="foot">foot</option>
+                <option value="Set">Set</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row"> <label class="col-2 col-form-label">Quantity</label>
+            <div class="col-10">
+              <input type="number" min="1" required="required" class="form-control w-50"> </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Material</button>
+          <div class="row pi-draggable">
+            <div class="col-md-8" style=""></div>
+            <div class="col-md-3  offset-md-1" style=""><button type="submit" class="btn btn-primary">Finalize Request</button></div>
+          </div>
+          <div class="panel-body">
+            <div class="tbl_user_data">
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalMaterial">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Materials Form</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-3">
+              <ul class="nav nav-pills flex-column">
+                <li class="nav-item"> <a class="nav-link active" href="" data-toggle="pill" data-target="#tabone">Existing Materials</a> </li>
+                <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabtwo">Non-Existing Materials</a> </li>
+              </ul>
+            </div>
+            <div class="col-9">
+              <div class="tab-content">
+                <div class="tab-pane fade active show" id="tabone" role="tabpanel">
+                  <div class="table-responsive pi-draggable" draggable="true">
+                    <table class="table table-bordered " id="materialSelect">
+                      <thead class="thead-dark">
+                        <tr>
+                          <th>Material Name</th>
+                          <th>Quantity Available</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Flourescent</th>
+                          <td>320</td>
+                          <td><a class="btn btn-primary pi-draggable" href="#" draggable="true">Select</a> </td>
+                        </tr>
+                        <tr>
+                          <th>Nail</th>
+                          <td>1650</td>
+                          <td><a class="btn btn-primary pi-draggable" href="#" draggable="true">Select</a> </td>
+                        </tr>
+                        <tr>
+                          <th>Barbed Wire</th>
+                          <td>500</td>
+                          <td><a class="btn btn-primary pi-draggable" href="#" draggable="true">Select</a> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+                  <form class="pi-draggable" draggable="true">
+                    <div class="form-group"> <label>Material Name</label> <input type="text" class="form-control"> <small class="form-text text-muted">Write down the name of the Material</small> </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script style="">
+    document.querySelector("#todayDate").valueAsDate = new Date();
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" style="">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script style="">
+    $(document).ready(function() {
+      $('#materialSelect').DataTable();
+      $('#materialSelect').DataTable();
+    });
+  </script>
+</body>
+
+</html>

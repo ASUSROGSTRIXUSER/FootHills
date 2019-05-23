@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="icon" href="Images/Untitled-1.png">
+  <link rel="stylesheet" href="theme.css">
+</head>
+
+<body style="	background-image: url(C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/Backgroundphoto.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="HouseStatusMainSelect.html">Back </a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="py-5 ">   
+      <div class="container">
+  <div class="accordion-option">
+    <h3 class="title">House Status</h3>
+    <a href="javascript:void(0)" class="toggle-accordion active" accordion-id="#accordion"></a>
+  </div>
+  <div class="clearfix"></div>
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title text-center">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Category And Sub-Category
+        </a>
+      </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+		<div class="grid-container">
+		<div class="grid-item">
+        <h4> Main Category List</h4>
+		
+                  <table class="table table-bordered table-hover table-sm " id="MainCategoryList">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>No</th>
+                        <th>Main Category</th>  
+                        <th>Sub-Category</th> 						
+                      </tr>
+                    </thead>
+                    <tbody class="bg-light">
+                      <tr>
+                        <th>1</th>
+                        <td>EarthWorks</td>  
+						<td><input value="Sub-category" type="button"></td>
+                      </tr>
+					
+                    </tbody>
+                  </table>
+                </div>
+	
+	 
+        <div class="grid-item">
+        <h4>  Add Category </h4> <form > <input id="categoryName" type="text" />   
+	   <input value="Add Category" type="button">
+	   </form> 
+	   </div>
+	   <div class="grid-item">
+	   <h4> Sub-Category List</h4>   <table class="table table-bordered table-hover table-sm " id="SubCategoryList">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>No</th>
+                        <th>Scope of Work</th>                                             
+                      </tr>
+                    </thead>
+                    <tbody class="bg-light">
+                      <tr>
+                        <th>1</th>
+                        <td>Earth fill</td>                                     
+                      </tr>
+					  <tr>
+                        <th>2</th>
+                        <td>Excavation</td>                                     
+                      </tr>
+					  
+                    </tbody>
+                  </table>    
+	   </div>
+	   <div class="grid-item">
+           <h4> Add Sub-Category </h4> <form > <input id="SubcategoryName" type="text" />   
+	   <input value="Sub-Category" type="button">
+	   </form>
+	   </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title text-center">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          House Status Entry
+        </a>
+      </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="panel-body">
+      
+		
+		        <table class="table-bordered table-hover bg-light" id="TreetablesEntry">
+				<thead >
+                  <tr>
+				  <th class="text-center" >Category </th>
+				  <th class="text-center"> Entry Data</th>
+				  </tr>				
+				</thead>
+				<tbody>
+	
+          <tr data-tt-id="1">
+          <td>EarthWorks</td>
+             </tr>
+           <tr data-tt-id="2" data-tt-parent-id="1">
+              <td>EarthFill</td>
+               <td class="text-center" ><form><input type="text"> </form> </td>			  
+           </tr>
+		    <tr data-tt-id="3" data-tt-parent-id="1">
+               <td>Excavation</td>	
+                <td class="text-center" ><form><input type="text"></form> </td>				   
+           </tr>
+		    
+		   <tr data-tt-id="4">
+          <td>Concrete Works</td>
+             </tr>
+			  <tr data-tt-id="5" data-tt-parent-id="4">
+              <td>Column Footing</td>	
+            <td class="text-center" ><form><input type="text"> </form>  </td>			  
+           </tr>
+		     <tr data-tt-id="6" data-tt-parent-id="4">
+              <td>Wall Footing</td>	
+            <td class="text-center" ><form><input type="text"> </form>  </td>			  
+           </tr>
+		     <tr data-tt-id="7" data-tt-parent-id="4">
+              <td>Concrete Column</td>	
+            <td class="text-center" ><form><input type="text"> </form>  </td>			  
+           </tr>
+		     <tr data-tt-id="8" data-tt-parent-id="4">
+              <td>Slab on Fill Concrete Class "C"</td>	
+            <td class="text-center" ><form><input type="text"></form> </td>			  
+           </tr>
+		   </tbody>
+           </table>
+           
+		 
+        </div> 
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingThree">
+        <h4 class="panel-title text-center">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+         House Status Summary
+        </a>
+      </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+        <div class="panel-body">
+        
+		
+		
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </div>
+ 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+ 
+
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" type="text/css">
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+ <link rel="stylesheet" href="http://ludo.cubicphuse.nl/jquery-treetable/css/jquery.treetable.theme.default.css" type="text/css">
+ <link rel="stylesheet" href="http://ludo.cubicphuse.nl/jquery-treetable/css/jquery.treetable.css" type="text/css">
+ <link rel="stylesheet" href=" http://ludo.cubicphuse.nl/jquery-treetable/css/screen.css" type="text/css">
+
+ <script src="http://ludo.cubicphuse.nl/jquery-treetable/jquery.treetable.js"></script>
+ 
+<script>
+$("#TreetablesEntry").treetable({ 
+    expandable: true,
+		
+});
+
+</script>
+  <script>
+ $(document).ready(function() {
+
+  $(".toggle-accordion").on("click", function() {
+    var accordionId = $(this).attr("accordion-id"),
+      numPanelOpen = $(accordionId + ' .collapse.in').length;
+    
+    $(this).toggleClass("active");
+
+    if (numPanelOpen == 0) {
+      openAllPanels(accordionId);
+    } else {
+      closeAllPanels(accordionId);
+    }
+  })
+
+  openAllPanels = function(aId) {
+    console.log("setAllPanelOpen");
+    $(aId + ' .panel-collapse:not(".in")').collapse('show');
+  }
+  closeAllPanels = function(aId) {
+    console.log("setAllPanelclose");
+    $(aId + ' .panel-collapse.in').collapse('hide');
+  }
+     
+});
+	
+  </script>
+ <script>
+    $(document).ready(function() {
+      $('#MainCategoryList').DataTable();
+	   $('#SubCategoryList').DataTable();
+	   
+    });
+  </script>
+ 
+<script>
+
+</script>
+
+	
+</body>
+
+</html>

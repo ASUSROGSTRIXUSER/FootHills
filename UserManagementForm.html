@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="icon" href="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/Untitled-1.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <title>FootHills Realty &amp; Development Corporation</title>
+  
+  
+  <link rel="stylesheet" href="theme.css">
+</head>
+
+<body style="	background-image: url(Images/Backgroundphoto.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;" class="">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14" style="">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="HomeAdmin.html">Home</a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center">Registration Management Form</h3>
+        </div>
+      </div>
+   
+
+  
+  <div class="pi-wrapper pi-draggable">
+    <ul class="nav nav-pills">
+      <li class="nav-item" style=""> <a href="" class="active nav-link" data-toggle="pill" data-target="#tabone">User Registration Confirmation</a> </li>
+      <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#tabtwo">Admin Registration Confirmation</a> </li>
+	   <li class="nav-item"> <a class="nav-link" href="" data-toggle="pill" data-target="#tabthree">Registered List</a> </li>
+    </ul>
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="tabone" role="tabpanel" 	style="">
+	  <h3 class="text-center">User </h3>
+        
+     	   <div class="table w-100 ml-auto">
+            <table class="table table-bordered table-hover table-sm border-dark border table-light " id="UserRequest">
+              <thead class="thead-dark">
+                <tr class="">
+                  <th>Email</th>
+                  <th class="text-center">Full Name</th>
+                  <th class="text-center">Contact Number</th>
+                  <th class="text-center">Action</th>
+                </tr>	
+              </thead>
+              <tbody class="">
+                <tr>
+                  <th class="text-center">Mark@yahoo.com</th>
+                  <td class="text-center">Mark A. Otto</td>
+                  <td class="text-center" >09236789798</td>
+                  <td class="text-center"> 
+				  <a class="btn btn-primary" data-toggle="modal" data-target="#UserManagementModal">Accept Request</a>
+				  <a class="btn btn-primary" >Reject Request</a> </td>
+                </tr>
+                <tr>
+                  <th class="text-center">Jacob@gmail.com</th>
+                  <td class="text-center">Jacob B. Thornton</td>
+                  <td class="text-center">0954678973</td>
+                  <td class="text-center">   <a class="btn btn-primary" data-toggle="modal" data-target="#UserManagementModal">Accept Request</a>
+				  <a class="btn btn-primary" >Reject Request</a></td>
+                </tr>
+                <tr>
+                  <th class="text-center">Jacob@gmail.com</th>
+                  <td class="text-center">Jacob B. Thornton</td>
+                  <td class="text-center">0954678973</td>
+                  <td class="text-center"> <a class="btn btn-primary" data-toggle="modal" data-target="#UserManagementModal">Accept Request</a>
+				  <a class="btn btn-primary" >Reject Request</a> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+      <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+         <h3 class="text-center">Admin</h3>
+		     <div class="table pi-draggable">
+            <table class="table table-bordered table-hover table-sm border border-dark table-light " id="AdminRequest">
+              <thead class="thead-dark">
+                <tr>
+                  <th>Email</th>
+                  <th class="">Full Name</th>
+                  <th class="">Contact Number</th>
+                  <th class="">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Jacob@gmail.com</th>
+                  <td class="">gagasdasda</td>
+                  <td>0954678973</td>
+                  <td> <select>
+                      <option href="#">Pending</option>	
+                      <option href="#">Accept</option>
+                      <option href="#">Reject</option>
+                    </select> </td>
+                </tr>
+                <tr>
+                  <th>Jacob@gmail.com</th>
+                  <td class="">Jacob B. Thornton</td>
+                  <td>0954678973</td>
+                  <td> <select>
+                      <option href="#">Pending</option>
+                      <option href="#">Accept</option>
+                      <option href="#">Reject</option>
+                    </select> </td>
+                </tr>
+                <tr>
+                  <th>Jacob@gmail.com</th>
+                  <td class="">Jacob B. Thornton</td>
+                  <td>0954678973</td>
+                  <td> <select>
+                      <option href="#">Pending</option>
+                      <option href="#">Accept</option>
+                      <option href="#">Reject</option>
+                    </select> </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+	  <div class="tab-pane fade" id="tabthree" r ole="tabpanel">
+   
+   
+   </div>
+	  
+	  
+    </div>
+  </div>
+   </div>
+   
+  <div class="modal pi-draggable fade" id="UserManagementModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Module Restriction</h5>
+		  
+          <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body" class="text-center" >
+	
+
+	      <form id="c_form-h">
+		  
+		  <div class="container">
+  <div class="form-group row">
+    <div class="col">
+     	<input type="checkbox" checked data-toggle="toggle" id="toggle-one"></input>
+		 <label for="inputBlock" class="col-2 col-form-label text-center">Project Module</label>		 	
+    </div>
+    <div class="col">
+   	<input type="checkbox" checked data-toggle="toggle" id="toggle-one"></input>
+	  <label for="inputBlock" class="col-2 col-form-label text-center">Material Module</label>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col">
+     	<input type="checkbox" checked data-toggle="toggle" id="toggle-one"></input>
+	  <label for="inputBlock" class="col-2 col-form-label text-center">Registration Management Module</label>
+    </div>
+    <div class="col">
+     	<input type="checkbox" checked data-toggle="toggle" id="toggle-one"></input>
+	  <label for="inputBlock" class="col-2 col-form-label text-center">Reports Module</label>
+    </div>  
+	
+  </div>
+  <div class="form-group row">
+    <div class="col">
+     	<input type="checkbox" checked data-toggle="toggle" id="toggle-one"></input>
+	  <label for="inputBlock" class="col-2 col-form-label text-center">House Status Module</label>
+    </div>  
+	
+  </div>
+ 
+</div>
+<button type="submit" class="btn btn-primary">Confirm</button>
+</form>
+      </div>
+    </div>
+  </div>
+  </div>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script> $(document).ready(function() {
+      $('#UserRequest').DataTable();
+	    $('#AdminRequest').DataTable();
+    });
+	
+	
+	 $(function() {
+    $('#toggle-one').bootstrapToggle({
+	on:'Enable',
+	off:'Disable'
+	
+	});
+  })
+  </script>
+  
+</body>
+
+</html>

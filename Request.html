@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="icon" href="Images/Untitled-1.png">
+  <link rel="stylesheet" href="theme.css">
+</head>
+
+<body style="	background-image: url(C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/Backgroundphoto.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="RequestMain.html">Back to Request Menu</a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="C:/Users/BlitZ/Desktop/Pingendo/Foothills/default/Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center">Request Details</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="">
+          <div class="table-responsive">
+            <table class="table table-borderless table-hover table-light" id="mainTable">
+              <thead>
+                <tr>
+                  <th class="table-dark">Date</th>
+				  <th class="table-dark">Description</th>
+                  <th class="table-dark">Block</th>
+				  <th class="table-dark">Lot</th>
+                  <th class="table-dark w-50 text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2/3/2019</td>
+				  <td>Samantha Mintal</td>
+                  <td>20</td>
+				  <td>4</td>
+                  <td ><a class="btn btn-primary" data-toggle="modal" data-target="#myModal">View Request</a>
+				  <a class="btn btn-primary" >Accept Request</a>
+				  <a class="btn btn-primary" >Reject Request</a>
+				  </td>
+                </tr>
+                <tr>
+                  <td>2/4/2019</td>
+				    <td>Samantha Grande</td>
+                 <td>15</td>
+				  <td>12</td>
+                  <td><a class="btn btn-primary" data-toggle="modal" data-target="#myModal">View Request</a>
+				   <a class="btn btn-primary" >Accept Request</a>
+				  <a class="btn btn-primary" >Reject Request</a>
+				  </td>
+                </tr>
+				<tr>
+                  <td>2/4/2019</td>
+				   <td>Samantha Grande</td>
+                 <td>15</td>
+				  <td>12</td>
+                  <td><a class="btn btn-primary" data-toggle="modal" data-target="#myModal">View Request</a>
+				   <a class="btn btn-primary" >Accept Request</a>
+				  <a class="btn btn-primary" >Reject Request</a>
+				  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" draggable="true">Request List</h5> <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body">
+          <form id="c_form-h" class="">
+            <div class="form-group row"> <label for="inputDate" class="col-2 col-form-label">Date</label>
+              <div class="col-10">
+                <input type="text" class="form-control w-50" placeholder="Autofilled" disabled=""> </div>
+            </div>
+            <div class="form-group row"> <label class="col-2 col-form-label">Project</label>
+              <div class="col-10">
+                <input type="text" class="form-control" placeholder="Autofilled" disabled=""> </div>
+            </div>
+            <div class="form-group row"> <label for="" class="col-2 col-form-label">Block Lot</label>
+              <div class="col-10">
+                <input type="text" class="form-control" placeholder="Autofilled" disabled=""> </div>
+            </div>
+            <div class="form-group row"> <label for="" class="col-2 col-form-label">Requested By</label>
+              <div class="col-10">
+                <input type="text" class="form-control" placeholder="Autofilled" disabled=""> </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="table-responsive">
+                  <table class="table table-bordered " id="modalTable">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th>No</th>
+                        <th>Units</th>
+                        <th>Materials</th>
+                        <th>Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>1</th>
+                        <td>20</td>
+                        <td>Barbed Wire</td>
+                        <td>50</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#mainTable').DataTable();
+	   $('#modalTable').DataTable();
+    });
+  </script>
+  
+</body>
+
+</html>

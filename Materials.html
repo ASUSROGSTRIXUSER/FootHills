@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="theme.css" type="text/css">
+  <link rel="icon" href="Images/Untitled-1.png">
+</head>
+
+<body class="" style="	background-image: url(Images/Backgroundphoto.jpg);	background-position: left top;	background-size: 100%;	background-repeat: repeat;">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <div class="container-fluid"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar14">
+        <p class="navbar-brand mb-0 text-white">
+          <i class="fa d-inline fa-lg fa-stop-circle"></i> FootHills Realty &amp; Development Corporation </p>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar14">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="HomeAdmin.html">Home</a> </li>
+        </ul>
+        <img class="img-fluid d-block rounded-circle" src="Images/FOOTHILLS LOGO FINAL (3).jpg" width="50">
+        <p class="d-none d-md-block lead mb-0  text-white"> <b> FootHills Realty &amp; Development Corporation</b> </p>
+        <ul class="navbar-nav ml-auto">
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-4 pb-3" style="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="" class="text-center">MATERIALS</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="pi-wrapper pi-draggable" draggable="true">
+          <ul class="nav nav-pills bg-info">
+            <li class="nav-item"> <a class="nav-link active" href="" data-toggle="pill" data-target="#tabone"> New Material</a> </li>
+            <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabtwo"> Requested Non-Existing Materials</a> </li>
+			 <li class="nav-item"> <a href="" class="nav-link" data-toggle="pill" data-target="#tabthree"> Stock-in</a> </li>
+          </ul>
+          <div class="tab-content mt-2">
+            <div class="tab-pane fade active show" id="tabone" role="tabpanel">
+              <form class="">
+                <div class="form-group"> <label>ID</label> <input type="text" class="form-control w-25" disabled=""> </div>
+                <div class="form-group"> <label>Description</label> <input type="text" class="form-control" required="required"> </div>
+                <div class="form-group"> <label>Unit</label>
+                  <select required="required" class="form-control">
+                    <option></option>
+                    <option value="cm">cm</option>
+                    <option value="m">m</option>
+                    <option value="mm">mm</option>
+                    <option value="inch">inch</option>
+                    <option value="foot">foot</option>
+                  </select>
+                </div>
+                <div class="form-group w-25"> <label>Quantity</label> <input type="number" class="form-control w-50" required="required"> </div> <button type="submit" class="btn btn-primary">Add</button>
+              </form>
+			    <div class="table-responsive">
+            <table class="table table-hover table-borderless table-light" id="MaterialsTable">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-left">ID</th>
+                  <th>Descripton</th>
+                  <th>Unit</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Barbed Wire</td>
+                  <td>mm</td>
+                  <td>160</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+            </div>
+            <div class="tab-pane fade" id="tabtwo" role="tabpanel">
+              <h3 class="pi-draggable text-center">Requested Non-Existing Materials From Users</h3>
+              <div class="table-responsive pi-draggable" draggable="true">
+                <table class="table table-bordered table-hover table-light" id="NonExRequestedTable">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th class="text-center"><input type="checkbox" id="selectall" class=""></th>
+                      <th>Material Name</th>
+                        <th>Unit</th>
+					   <th>Overall Requested Quantity</th>
+					   <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th class="text-center"><input type="checkbox" class="case" name="case" value="1"></th>
+                      <td class="text-center">Impact Wrench</td>
+					  <td class="text-center">mm</td>
+                      <td class="text-center">160</td>
+					  <td class="text-center"><a class="btn btn-primary" data-toggle="modal" data-target="#NonExistingDetails">View Details</a></td>
+                    </tr>
+                    <tr>
+                      <th class="text-center"><input type="checkbox" class="case" name="case" value="2"></th>
+                      <td class="text-center">Fork Driller</td>
+					  <td class="text-center">sqm</td>
+                      <td class="text-center">10</td>
+					  <td class="text-center"><a class="btn btn-primary" data-toggle="modal" data-target="#NonExistingDetails">View Details</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+			 <div class="tab-pane fade" id="tabthree" role="tabpanel">
+			
+			 
+			 
+			   <div class="table-responsive">
+            <table class="table table-hover table-borderless table-light" id="StockInTable">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-center">ID</th>
+                  <th>Descripton</th>
+                  <th>Unit</th>
+                  <th>Quantity</th>
+				  <th>Selection</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Barbed Wire</td>
+                  <td>mm</td>
+                  <td>160</td>
+				  <td><a class="btn btn-primary" data-toggle="modal" data-target="#StockInModal">Stock-in</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+			 
+			 
+			 </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal pi-draggable fade" id="StockInModal">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center">Stock In Process</h5>
+          <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body" id="PrintableData">
+       
+	   <form  class="text-center">
+	     Date:
+	    <input id="Stockindate" type="date" ></input>
+		<br> <br>Time:
+	  <input type='time' id="Stockintime"  /></input>
+	   <br><br>
+  Current Quantity:<br>
+  <input type="number" value="Item Current Quantity" readonly>
+  <br>
+    Stock-In Quantity:<br>
+  <input type="number" min="1" >
+  <br>
+  <br>
+ <button type="submit" onclick="clicked()" class="btn btn-primary">Stock-in</button>
+</form>
+	   
+	   
+	   
+        </div>
+      </div>
+    </div>
+  </div>
+   <div class="modal pi-draggable fade" id="NonExistingDetails">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-center">Stock In Process</h5>
+          <button type="button" class="close" data-dismiss="modal"> <span>×</span> </button>
+        </div>
+        <div class="modal-body" id="PrintableData">
+
+			   <div class="table-responsive">
+            <table class="table table-hover table-borderless table-light" id="">
+              <thead class="thead-dark">
+                <tr>
+                  <th class="text-center">No.</th>
+                  <th class="text-center">User Requesting</th>
+                  <th class="text-center">Units</th>
+			       <th class="text-center">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td class="text-center">Robert Panghilinan</td>
+                  <td class="text-center">100</td>			 
+                </tr>
+				  <tr>
+                  <th class="text-center" scope="row">2</th>
+                  <td class="text-center">Jeric Carl Lacag</td>			
+                  <td class="text-center">60</td>			 
+                </tr>
+              </tbody>
+            </table>
+          </div>  
+ <button type="submit" class="btn btn-primary">Add Item to Available Items</button>
+</form>
+	   
+	   
+	   
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+  <title>FootHills Realty &amp; Development Corporation</title>
+  <script>
+    $(document).ready(function() {
+      $('#MaterialsTable').DataTable();
+	   $('#NonExRequestedTable').DataTable();
+	     $('#StockInTable').DataTable();
+	   
+    });	
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ 
+  <script style="">
+    $(function() {
+      // add multiple select / deselect functionality
+      $("#selectall").click(function() {
+        $('.case').attr('checked', this.checked);
+      });
+      // if all checkbox are selected, check the selectall checkbox
+      // and viceversa
+      $(".case").click(function() {
+        if ($(".case").length == $(".case:checked").length) {
+          $("#selectall").attr("checked", "checked");
+        } else {
+          $("#selectall").removeAttr("checked");
+        }
+      });
+    });
+  </script>
+  <script>
+     document.querySelector("#Stockindate").valueAsDate = new Date();
+	 
+  </script>
+  <script type="text/javascript">
+    function clicked() {
+       if (confirm('Check Stock-In Quantity before Submitting!')) {
+           yourformelement.submit();
+       } else {
+           return false;
+       }
+    }
+
+</script>
+  
+</html>
